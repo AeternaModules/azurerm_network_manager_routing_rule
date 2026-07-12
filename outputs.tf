@@ -1,3 +1,7 @@
+output "network_manager_routing_rules_id" {
+  description = "Map of id values across all network_manager_routing_rules, keyed the same as var.network_manager_routing_rules"
+  value       = { for k, v in azurerm_network_manager_routing_rule.network_manager_routing_rules : k => v.id }
+}
 output "network_manager_routing_rules_description" {
   description = "Map of description values across all network_manager_routing_rules, keyed the same as var.network_manager_routing_rules"
   value       = { for k, v in azurerm_network_manager_routing_rule.network_manager_routing_rules : k => v.description }
